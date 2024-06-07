@@ -173,7 +173,7 @@ def get_retrieval_content(self, querys) -> str:
 
 
 <h2 id="5-1">方案细节：</h2>
-<h3 id="5-1">RAG具体流程</h3>
+<h3 id="5-2">RAG具体流程</h3>
 
 
 - 根据数据集构建 vector DB  
@@ -191,3 +191,35 @@ def get_retrieval_content(self, querys) -> str:
 - 利用评测框架RAGAS对系统进行评估  
 
 - 构建二分类数据对向量模型以及精排模型进行训练以提升性能  
+
+
+<h2 id="6-1">相关链接</h2>
+
+
+BGE Github
+
+- [BAAI/bge-small-en-v1.5](https://huggingface.co/BAAI/bge-small-en-v1.5): embedding 模型，用于构建 vector DB
+
+- [BAAI/bge-reranker-large](https://huggingface.co/BAAI/bge-reranker-large): rerank 模型，用于对检索回来的文章段落重排
+
+InternLM2
+
+- [Chat-1.8B模型](https://huggingface.co/internlm/internlm2-chat-1_8b)
+
+- [Chat-7B模型](https://huggingface.co/internlm/internlm2-chat-7b)
+
+- [Math-7B模型](https://huggingface.co/internlm/internlm2-math-7b)
+
+- [Chat-20B模型](https://huggingface.co/internlm/internlm2-chat-20b)
+
+LangChain
+
+- [文档](https://python.langchain.com/v0.2/docs/introduction/)
+
+- [Github 仓库](https://github.com/langchain-ai/langchain)
+
+FAISS
+
+- [文档](https://faiss.ai/)
+
+- [Github 仓库](https://github.com/facebookresearch/faiss)
