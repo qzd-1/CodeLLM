@@ -31,10 +31,10 @@ pip install -r requirements.txt
 <!-- **使用指南：** -->
 <h2 id="4">使用指南：</h2>
 <h3 id="4-1">本地数据集向量化 </h3>
-PDF 数据
+__PDF 数据__
 将需要向量化的pdf数据放到对应的目录下
 
-JSON 数据
+__JSON 数据__  
 构建 QA 对并生成 JSON 文件（单轮/多轮对话），放入到对应目录下
 
 数据格式如下
@@ -114,6 +114,7 @@ prompt_template = """
 <h4 id="4-3">2. 本地调用 </h4>
 运行构建本地知识库脚本
 
+
 ```shell
 python data_generate.py
 ```
@@ -129,6 +130,7 @@ python data_generate.py
 
 <h3 id="4-3">相关文本召回与精排</h3>
 利用faiss找出与用户输入的问题最相关的文档，然后将召回出来的文本与用户原始输入拼接输入给llm。检索代码如下：
+
 
 ```shell
 def get_retrieval_content(self, querys) -> str:
@@ -162,11 +164,11 @@ def get_retrieval_content(self, querys) -> str:
 
 <h2 id="5-1">方案细节：</h2>
 <h3 id="5-1">RAG具体流程</h3>
-- 根据数据集构建 vector DB
-- 对用户输入的问题进行 embedding
-- 基于 embedding 结果在向量数据库中进行检索
-- 对召回数据重排序
-- 依据用户问题和召回数据生成最后的结果
+- 根据数据集构建 vector DB  
+- 对用户输入的问题进行 embedding  
+- 基于 embedding 结果在向量数据库中进行检索  
+- 对召回数据重排序  
+- 依据用户问题和召回数据生成最后的结果  
 <h3 id="5-2">后续计划</h3>
-- 利用评测框架RAGAS对系统进行评估
-- 构建二分类数据对向量模型以及精排模型进行训练以提升性能
+- 利用评测框架RAGAS对系统进行评估  
+- 构建二分类数据对向量模型以及精排模型进行训练以提升性能  
