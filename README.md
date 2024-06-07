@@ -3,7 +3,9 @@
 <h2 id="1">模块目的：</h2>
  根据用户的问题，检索对应信息以增强回答的专业性, 使CoalQA的回答更加专业可靠。检索内容包括但不限于以下几点：
 
+
 - 煤矿安全相关的问答对
+
 - 煤矿安全相关的案例
 
 <h2 id="2">技术路线：</h2>
@@ -79,8 +81,8 @@ JSON 数据
 },
 ```
 
-<h3 id="4-2">构建向量数据库</h3>
-  1. 配置文件修改
+<h3 id="4-2">构建向量数据库  </h3>
+  1. 配置文件修改  
 根据需要改写 config.config 文件：
 
 ```shell
@@ -108,13 +110,13 @@ prompt_template = """
 	问题：{query}
 """
 ```
-  2. 本地调用
+  2. 本地调用  
 运行构建本地知识库脚本
 
 ```shell
 python data_generate.py
 ```
-建库脚本主要执行以下步骤：
+向量化主要步骤如下：
 
 - 加载pdf数据集并提取文本
 
@@ -156,7 +158,8 @@ def get_retrieval_content(self, querys) -> str:
         return output if self.rerank_flag else content
 ```
 
-**方案细节：**
+
+<h2 id="5-1">方案细节：</h2>
 <h3 id="5-1">RAG具体流程</h3>
 - 根据数据集构建 vector DB
 - 对用户输入的问题进行 embedding
